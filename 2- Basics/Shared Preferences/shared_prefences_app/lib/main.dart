@@ -91,6 +91,7 @@ class _DestinationListScreenState extends State<DestinationListScreen> {
         .map((destination) => jsonEncode(destination.toJson()))
         .toList();
     await prefs.setStringList('destinations', destinationsJson);
+    print("object");
   }
 
   void addDestination() {
