@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_shake_animated/flutter_shake_animated.dart';
 
 class ButtonScreen extends StatefulWidget {
+  const ButtonScreen({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _ButtonScreenState createState() => _ButtonScreenState();
 }
 
@@ -17,13 +19,13 @@ class _ButtonScreenState extends State<ButtonScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Buttons'),
+        title: const Text('Buttons'),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           DropdownButton<String>(
-            hint: Text('Select an option'),
+            hint: const Text('Select an option'),
             items: <String>['Option 1', 'Option 2', 'Option 3']
                 .map((String value) {
               return DropdownMenuItem<String>(
@@ -51,12 +53,12 @@ class _ButtonScreenState extends State<ButtonScreen> {
             borderRadius: BorderRadius.circular(10.0),
             child: Container(
               width: double.infinity,
-              padding: EdgeInsets.all(16.0),
+              padding: const EdgeInsets.all(16.0),
               alignment: Alignment.center,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10.0),
                 gradient: isPressed
-                    ? LinearGradient(
+                    ? const LinearGradient(
                         colors: [Colors.red, Colors.orange],
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
@@ -64,12 +66,12 @@ class _ButtonScreenState extends State<ButtonScreen> {
                     : null,
                 image: isPressed
                     ? null
-                    : DecorationImage(
+                    : const DecorationImage(
                         image: NetworkImage(
                             'https://cdn1.vogel.de/unsafe/800x0/smart/images.vogel.de/vogelonline/bdb/1286800/1286845/original.jpg'),
                         fit: BoxFit.cover,
                       ),
-                boxShadow: [
+                boxShadow: const [
                   BoxShadow(
                     color: Colors.black,
                     offset: Offset(0, 2),
@@ -77,7 +79,7 @@ class _ButtonScreenState extends State<ButtonScreen> {
                   ),
                 ],
               ),
-              child: Text(
+              child: const Text(
                 'Button',
                 style: TextStyle(
                   fontSize: 20.0,
@@ -106,7 +108,7 @@ class _ButtonScreenState extends State<ButtonScreen> {
               width: 200,
               height: 50,
               color: buttonColor,
-              child: Center(
+              child: const Center(
                 child: Text(
                   'Button',
                   style: TextStyle(
@@ -123,18 +125,19 @@ class _ButtonScreenState extends State<ButtonScreen> {
                 isButtonActive = !isButtonActive;
               });
             },
-            child: Text('Toggle Button'),
+            child: const Text('Toggle Button'),
           ),
           ElevatedButton(
             onPressed: isButtonActive
                 ? null
                 : () {
+                    // ignore: avoid_print
                     print('Button is active!');
                   },
-            child: Text('Active Button'),
+            child: const Text('Active Button'),
           ),
           ShakeWidget(
-              duration: Duration(milliseconds: 5),
+              duration: const Duration(milliseconds: 5),
               shakeConstant: ShakeHardConstant2(),
               autoPlay: shakeActive,
               enableWebMouseHover: true,
@@ -144,7 +147,7 @@ class _ButtonScreenState extends State<ButtonScreen> {
                       shakeActive = !shakeActive;
                     });
                   },
-                  child: Text("Shake Button"))),
+                  child: const Text("Shake Button"))),
         ],
       ),
     );

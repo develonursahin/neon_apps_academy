@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 
 class ContainerScreen extends StatelessWidget {
+  const ContainerScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Containers'),
+        title: const Text('Containers'),
       ),
       body: Container(
-        margin: EdgeInsets.all(100),
+        margin: const EdgeInsets.all(100),
         child: SingleChildScrollView(
           child: Column(
             children: [
@@ -30,7 +32,7 @@ class ContainerScreen extends StatelessWidget {
                   color: Colors.green,
                   borderRadius: BorderRadius.circular(20.0),
                 ),
-                child: Center(
+                child: const Center(
                   child: Text(
                     'Container 2',
                     style: TextStyle(
@@ -43,7 +45,7 @@ class ContainerScreen extends StatelessWidget {
               Container(
                 width: 120,
                 height: 120,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   gradient: LinearGradient(
                     colors: [Colors.orange, Colors.deepOrange],
                   ),
@@ -67,7 +69,7 @@ class ContainerScreen extends StatelessWidget {
                   color: Colors.black,
                   borderRadius: BorderRadius.circular(10.0),
                 ),
-                child: Center(
+                child: const Center(
                   child: Text(
                     'Container 5',
                     style: TextStyle(
@@ -81,7 +83,7 @@ class ContainerScreen extends StatelessWidget {
                 width: 80,
                 height: 80,
                 color: Colors.yellow,
-                child: Icon(
+                child: const Icon(
                   Icons.star,
                   color: Colors.white,
                 ),
@@ -97,7 +99,7 @@ class ContainerScreen extends StatelessWidget {
                     color: Colors.transparent,
                   ),
                   borderRadius: BorderRadius.circular(75),
-                  gradient: LinearGradient(
+                  gradient: const LinearGradient(
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
                     colors: [Colors.pink, Colors.purple],
@@ -108,7 +110,7 @@ class ContainerScreen extends StatelessWidget {
                 width: 100,
                 height: 100,
                 color: Colors.white,
-                child: Icon(
+                child: const Icon(
                   Icons.check,
                   color: Colors.blue,
                   size: 60.0,
@@ -117,7 +119,7 @@ class ContainerScreen extends StatelessWidget {
               Container(
                 width: 200,
                 height: 150,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Colors.green,
                   image: DecorationImage(
                     image: NetworkImage(
@@ -133,7 +135,7 @@ class ContainerScreen extends StatelessWidget {
                   color: Colors.pink,
                   borderRadius: BorderRadius.circular(60.0),
                 ),
-                child: Center(
+                child: const Center(
                   child: Text(
                     'Container 10',
                     style: TextStyle(
