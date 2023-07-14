@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ui_widgets_app/views/button_view.dart';
 import 'package:ui_widgets_app/views/container_view.dart';
+import 'package:ui_widgets_app/views/slider_view.dart';
 import 'package:ui_widgets_app/views/textfield_view.dart';
 
 void main() {
@@ -68,6 +69,8 @@ class ContainerGrid extends StatelessWidget {
                         return ButtonScreen();
                       case 'TextFields':
                         return TextFieldScreen();
+                      case 'Slider':
+                        return SliderScreen();
                       default:
                         return ContainerScreen();
                     }
