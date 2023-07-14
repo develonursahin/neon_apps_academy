@@ -41,14 +41,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.17.1"
-  cupertino_icons:
-    dependency: "direct main"
-    description:
-      name: cupertino_icons
-      sha256: e35129dc44c9118cee2a5603506d823bab99c68393879edb440e0090d07586be
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.0.5"
   fake_async:
     dependency: transitive
     description:
@@ -70,6 +62,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.2"
+  flutter_shake_animated:
+    dependency: "direct main"
+    description:
+      name: flutter_shake_animated
+      sha256: "93ce87fa31467c28f10f11147243172a7692df846589b30ff16e592de20341b2"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.5"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -186,3 +186,4 @@ packages:
     version: "2.1.4"
 sdks:
   dart: ">=3.0.5 <4.0.0"
+  flutter: ">=1.17.0"

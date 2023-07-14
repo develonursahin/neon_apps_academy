@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ui_widgets_app/views/button_view.dart';
 import 'package:ui_widgets_app/views/container_view.dart';
 
 void main() {
@@ -62,8 +63,10 @@ class ContainerGrid extends StatelessWidget {
                     switch (pageNames[index]) {
                       case 'Container':
                         return ContainerScreen();
+                      case 'Buttons':
+                        return ButtonScreen();
                       default:
-                        return ContainerScreen();
+                        return ContainerScreen(); 
                     }
                   },
                 ),
