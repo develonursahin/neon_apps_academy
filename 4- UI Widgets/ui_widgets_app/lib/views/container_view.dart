@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
 
-class CustomContainerScreen extends StatelessWidget {
+class ContainerScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Custom Containers'),
+        title: Text('Containers'),
       ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: EdgeInsets.all(16.0),
+      body: Container(
+        margin: EdgeInsets.all(100),
+        child: SingleChildScrollView(
           child: Column(
             children: [
-              // 1. Mavi container, kalın border, border rengi sarı
               Container(
                 width: 200,
                 height: 200,
@@ -24,8 +23,6 @@ class CustomContainerScreen extends StatelessWidget {
                   ),
                 ),
               ),
-
-              // 2. Yeşil container, border radius 20, içerisinde beyaz metin
               Container(
                 width: 150,
                 height: 100,
@@ -43,8 +40,6 @@ class CustomContainerScreen extends StatelessWidget {
                   ),
                 ),
               ),
-
-              // 3. Turuncu container, gradient arka plan
               Container(
                 width: 120,
                 height: 120,
@@ -54,8 +49,6 @@ class CustomContainerScreen extends StatelessWidget {
                   ),
                 ),
               ),
-
-              // 4. Mor container, border kalınlığı 2
               Container(
                 width: 100,
                 height: 100,
@@ -67,8 +60,6 @@ class CustomContainerScreen extends StatelessWidget {
                   ),
                 ),
               ),
-
-              // 5. Siyah container, kenar yuvarlama, içerisinde beyaz metin
               Container(
                 width: 180,
                 height: 80,
@@ -86,8 +77,6 @@ class CustomContainerScreen extends StatelessWidget {
                   ),
                 ),
               ),
-
-              // 6. Sarı container, içerisinde beyaz ikon
               Container(
                 width: 80,
                 height: 80,
@@ -97,8 +86,6 @@ class CustomContainerScreen extends StatelessWidget {
                   color: Colors.white,
                 ),
               ),
-
-              // 7. Kırmızı container, gradient border
               Container(
                 width: 150,
                 height: 150,
@@ -117,8 +104,6 @@ class CustomContainerScreen extends StatelessWidget {
                   ),
                 ),
               ),
-
-              // 8. Beyaz container, içerisinde mavi ikon
               Container(
                 width: 100,
                 height: 100,
@@ -129,21 +114,18 @@ class CustomContainerScreen extends StatelessWidget {
                   size: 60.0,
                 ),
               ),
-
-              // 9. Yeşil container, içerisinde resim
               Container(
                 width: 200,
                 height: 150,
                 decoration: BoxDecoration(
                   color: Colors.green,
                   image: DecorationImage(
-                    image: AssetImage('assets/images/flower.jpg'),
+                    image: NetworkImage(
+                        'https://cdnuploads.aa.com.tr/uploads/Contents/2019/02/11/thumbs_b_c_71770f92a9a61318ebca0f88c4d338a8.jpg?v=110830'),
                     fit: BoxFit.cover,
                   ),
                 ),
               ),
-
-              // 10. Pembe container, border radius 50, içerisinde beyaz metin
               Container(
                 width: 120,
                 height: 120,

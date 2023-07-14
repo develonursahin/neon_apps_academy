@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ui_widgets_app/views/container_view.dart';
 
 void main() {
   runApp(MyApp());
@@ -57,7 +58,14 @@ class ContainerGrid extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => PageDetail(pageName: pageNames[index]),
+                  builder: (context) {
+                    switch (pageNames[index]) {
+                      case 'Container':
+                        return ContainerScreen();
+                      default:
+                        return ContainerScreen();
+                    }
+                  },
                 ),
               );
             },
@@ -78,30 +86,6 @@ class ContainerGrid extends StatelessWidget {
             ),
           );
         },
-      ),
-    );
-  }
-}
-
-class PageDetail extends StatelessWidget {
-  final String pageName;
-
-  PageDetail({required this.pageName});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(pageName),
-      ),
-      body: Center(
-        child: Text(
-          pageName,
-          style: TextStyle(
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
       ),
     );
   }
