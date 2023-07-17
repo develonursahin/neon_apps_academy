@@ -11,6 +11,7 @@ import 'package:ui_widgets_app/views/slider_view.dart';
 import 'package:ui_widgets_app/views/stack_view.dart';
 import 'package:ui_widgets_app/views/stepper_view.dart';
 import 'package:ui_widgets_app/views/switch_view.dart';
+import 'package:ui_widgets_app/views/tab_bar_view.dart';
 import 'package:ui_widgets_app/views/textfield_view.dart';
 
 void main() {
@@ -98,6 +99,8 @@ class ContainerGrid extends StatelessWidget {
                         return StackScreen();
                       case 'Scroll View':
                         return ScrollScreen();
+                      case 'Tab Bar':
+                        return TabBarScreen();
                       default:
                         return ContainerScreen();
                     }
