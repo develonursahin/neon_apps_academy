@@ -4,6 +4,7 @@ import 'package:ui_widgets_app/views/button_view.dart';
 import 'package:ui_widgets_app/views/circular_progress_indicator_view.dart';
 import 'package:ui_widgets_app/views/container_view.dart';
 import 'package:ui_widgets_app/views/data_table_view.dart';
+import 'package:ui_widgets_app/views/grid_view.dart';
 import 'package:ui_widgets_app/views/linear_progress_indicator_view.dart';
 import 'package:ui_widgets_app/views/page_control_view.dart';
 import 'package:ui_widgets_app/views/picker_view.dart';
@@ -110,6 +111,8 @@ class ContainerGrid extends StatelessWidget {
                         return DataTableScreen();
                       case 'Search Bar':
                         return SearchBarScreen();
+                      case 'Grid View':
+                        return GridViewScreen();
                       default:
                         return ContainerScreen();
                     }
