@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ui_widgets_app/views/button_view.dart';
 import 'package:ui_widgets_app/views/container_view.dart';
 import 'package:ui_widgets_app/views/slider_view.dart';
+import 'package:ui_widgets_app/views/stepper_view.dart';
 import 'package:ui_widgets_app/views/switch_view.dart';
 import 'package:ui_widgets_app/views/textfield_view.dart';
 
@@ -74,6 +75,8 @@ class ContainerGrid extends StatelessWidget {
                         return SliderScreen();
                       case 'Switch':
                         return SwitchScreen();
+                      case 'Stepper':
+                        return StepperScreen();
                       default:
                         return ContainerScreen();
                     }
