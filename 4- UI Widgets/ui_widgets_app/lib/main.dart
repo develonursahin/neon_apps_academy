@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ui_widgets_app/views/alert_controller_view.dart';
 import 'package:ui_widgets_app/views/button_view.dart';
+import 'package:ui_widgets_app/views/circular_progress_indicator_view.dart';
 import 'package:ui_widgets_app/views/container_view.dart';
 import 'package:ui_widgets_app/views/page_control_view.dart';
 import 'package:ui_widgets_app/views/segmented_control_view.dart';
@@ -86,6 +87,8 @@ class ContainerGrid extends StatelessWidget {
                         return SegmentedControlScreen();
                       case 'Alert Controller':
                         return AlertControllerScreen();
+                      case 'Circular Progress Indicator':
+                        return CircularProgressIndicatorScreen();
                       default:
                         return ContainerScreen();
                     }
