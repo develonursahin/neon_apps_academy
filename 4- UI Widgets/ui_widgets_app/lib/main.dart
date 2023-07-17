@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ui_widgets_app/views/alert_controller_view.dart';
 import 'package:ui_widgets_app/views/button_view.dart';
 import 'package:ui_widgets_app/views/container_view.dart';
 import 'package:ui_widgets_app/views/page_control_view.dart';
@@ -83,6 +84,8 @@ class ContainerGrid extends StatelessWidget {
                         return PageControlScreen();
                       case 'Segmented Control':
                         return SegmentedControlScreen();
+                      case 'Alert Controller':
+                        return AlertControllerScreen();
                       default:
                         return ContainerScreen();
                     }
