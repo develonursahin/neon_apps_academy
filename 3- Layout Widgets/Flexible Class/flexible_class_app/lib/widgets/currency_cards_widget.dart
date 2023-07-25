@@ -19,7 +19,6 @@ class CurrencyCards extends StatelessWidget {
             currenciesList.length,
             (index) {
               final cardWidth = MediaQuery.of(context).size.width * 0.2;
-              final cardHeight = MediaQuery.of(context).size.width * 0.5;
 
               final isIncrease = random.nextBool();
               final icon =
