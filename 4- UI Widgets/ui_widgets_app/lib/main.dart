@@ -63,11 +63,11 @@ class ContainerGrid extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('UI Widgets'),
+        title: const Text('UI Widgets'),
       ),
       body: GridView.builder(
         itemCount: pageNames.length,
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 3,
         ),
         itemBuilder: (BuildContext context, int index) {
@@ -129,11 +129,14 @@ class ContainerGrid extends StatelessWidget {
                 border: Border.all(color: Colors.white),
               ),
               child: Center(
-                child: Text(
-                  pageNames[index],
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
+                child: Padding(
+                  padding: const EdgeInsets.all(15),
+                  child: Text(
+                    pageNames[index],
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
               ),

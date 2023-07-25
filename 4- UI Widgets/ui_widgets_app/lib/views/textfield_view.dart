@@ -46,12 +46,12 @@ class _TextFieldScreenState extends State<TextFieldScreen> {
         child: Column(
           children: [
             TextField(
+              style: TextStyle(
+                color: Colors.red,
+                fontWeight: FontWeight.bold,
+              ),
               decoration: const InputDecoration(
                 labelText: 'Enter Fullname',
-                labelStyle: TextStyle(
-                  color: Colors.red,
-                  fontWeight: FontWeight.bold,
-                ),
               ),
               onEditingComplete: () {
                 FocusScope.of(context).unfocus();
@@ -61,13 +61,13 @@ class _TextFieldScreenState extends State<TextFieldScreen> {
               keyboardType: TextInputType.multiline,
             ),
             TextField(
+              style: const TextStyle(
+                color: Colors.blue,
+                fontStyle: FontStyle.italic,
+              ),
               controller: emailController,
               decoration: InputDecoration(
                 labelText: 'Enter E-mail',
-                labelStyle: const TextStyle(
-                  color: Colors.blue,
-                  fontStyle: FontStyle.italic,
-                ),
                 errorText: errorMessage.isNotEmpty ? errorMessage : null,
               ),
               onChanged: (value) {
@@ -79,12 +79,12 @@ class _TextFieldScreenState extends State<TextFieldScreen> {
               ],
             ),
             const TextField(
+              style: TextStyle(
+                color: Colors.green,
+                decoration: TextDecoration.underline,
+              ),
               decoration: InputDecoration(
                 labelText: 'Enter Phone Number',
-                labelStyle: TextStyle(
-                  color: Colors.green,
-                  decoration: TextDecoration.underline,
-                ),
               ),
               maxLength: 10,
               keyboardType: TextInputType.phone,

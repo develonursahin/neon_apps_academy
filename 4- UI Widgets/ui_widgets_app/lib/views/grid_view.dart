@@ -38,7 +38,6 @@ class GridViewScreen extends StatelessWidget {
         itemBuilder: (context, index) {
           return GestureDetector(
             onTap: () {
-              // Navigate to the app detail page
               Navigator.push(
                 context,
                 MaterialPageRoute(
@@ -46,16 +45,22 @@ class GridViewScreen extends StatelessWidget {
                 ),
               );
             },
-            child: Card(
-              child: Column(
-                children: [
-                  Image.network(
-                    apps[index].appIcon,
-                    width: 100,
-                    height: 100,
+            child: Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: Card(
+                child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Column(
+                    children: [
+                      Image.network(
+                        apps[index].appIcon,
+                        width: 100,
+                        height: 100,
+                      ),
+                      Text(apps[index].appName),
+                    ],
                   ),
-                  Text(apps[index].appName),
-                ],
+                ),
               ),
             ),
           );
@@ -92,22 +97,25 @@ class AppDetailScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text(app.appName),
       ),
-      body: Column(
-        children: [
-          Image.network(
-            app.appIcon,
-            width: 200,
-            height: 200,
-          ),
-          Text('Release Date: ${app.releaseDate}'),
-          Text('Category: ${app.appCategory}'),
-          ElevatedButton(
-            onPressed: () {
-              // Open the app store URL
-            },
-            child: Text('Open in App Store'),
-          ),
-        ],
+      body: Center(
+        child: Column(
+          children: [
+            Image.network(
+              app.appIcon,
+              width: 200,
+              height: 200,
+            ),
+            Text('Release Date: ${app.releaseDate}'),
+            Text('Category: ${app.appCategory}'),
+            SizedBox(height: 15),
+            ElevatedButton(
+              onPressed: () {
+                // Open the app store URL
+              },
+              child: Text('Open in App Store'),
+            ),
+          ],
+        ),
       ),
     );
   }
