@@ -10,22 +10,24 @@ class PageControlScreen extends StatefulWidget {
 class _PageControlScreenState extends State<PageControlScreen> {
   final List<PageItem> pages = [
     PageItem(
-      title: 'Important Announcement',
-      subtitle: 'New regulations for the kingdom',
-      image: NetworkImage(
-          'https://lifehopeandtruth.com/cache/images/the-kingdom-of-god-the-rule-of-law_850_500_80.jpg'),
-    ),
+        title: 'Important Announcement',
+        subtitle: 'New regulations for the kingdom',
+        image: const NetworkImage(
+            'https://lifehopeandtruth.com/cache/images/the-kingdom-of-god-the-rule-of-law_850_500_80.jpg'),
+        color: Colors.pink),
     PageItem(
       title: 'Upcoming Event',
       subtitle: 'Royal Ball in the palace',
-      image:
-          NetworkImage('https://i.ytimg.com/vi/gMRQhvGhYlA/maxresdefault.jpg'),
+      image: const NetworkImage(
+          'https://i.ytimg.com/vi/gMRQhvGhYlA/maxresdefault.jpg'),
+      color: Colors.amber,
     ),
     PageItem(
       title: 'Historical Facts',
       subtitle: 'Discover the kingdom\'s rich history',
-      image: NetworkImage(
+      image: const NetworkImage(
           'https://www.timeforkids.com/wp-content/uploads/2020/09/TFK_200904_005.jpg'),
+      color: Colors.green,
     ),
   ];
 
@@ -37,6 +39,7 @@ class _PageControlScreenState extends State<PageControlScreen> {
       appBar: AppBar(
         title: const Text('Page Control'),
       ),
+      backgroundColor: pages[currentPage].color,
       body: Container(
         margin: const EdgeInsets.all(16),
         child: Column(
@@ -55,7 +58,7 @@ class _PageControlScreenState extends State<PageControlScreen> {
                 },
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -74,8 +77,10 @@ class PageItem {
   final String title;
   final String subtitle;
   final ImageProvider image;
+  final Color color;
 
   PageItem({
+    required this.color,
     required this.title,
     required this.subtitle,
     required this.image,
@@ -96,17 +101,17 @@ class PageItemWidget extends StatelessWidget {
         children: [
           Text(
             page.title,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 24,
               fontWeight: FontWeight.bold,
             ),
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           Text(
             page.subtitle,
-            style: TextStyle(fontSize: 18),
+            style: const TextStyle(fontSize: 18),
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           Image(
             image: page.image,
             height: 200,
