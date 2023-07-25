@@ -12,8 +12,8 @@ class Chart extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(top: 20, left: 20, right: 20),
       child: SizedBox(
-        width: 500,
-        height: 200,
+        width: MediaQuery.sizeOf(context).width,
+        height: 250,
         child: Card(
           color: const Color.fromARGB(255, 0, 191, 99),
           child: Padding(

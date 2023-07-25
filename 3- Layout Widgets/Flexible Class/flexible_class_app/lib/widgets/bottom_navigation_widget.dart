@@ -6,6 +6,7 @@ class BottomNavigation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 75,
       color: Color.fromARGB(255, 0, 191, 99),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,

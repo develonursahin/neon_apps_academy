@@ -50,70 +50,61 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
         backgroundColor: Colors.black,
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Container(
-              decoration: BoxDecoration(
-                color: Color.fromARGB(255, 0, 191, 99),
-                borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(30),
-                  bottomRight: Radius.circular(30),
+        body: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(
+                height: 170,
+                decoration: BoxDecoration(
+                  color: Color.fromARGB(255, 0, 191, 99),
+                  borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(30),
+                    bottomRight: Radius.circular(30),
+                  ),
                 ),
-              ),
-              child: Column(
-                children: [
-                  Padding(
-                    padding: EdgeInsets.only(top: 70, bottom: 20),
-                    child: Row(
-                      children: [
-                        SizedBox(
-                          width: 180,
-                          height: 90,
-                          child: Image(
-                            image: AssetImage('assets/images/logo.png'),
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.only(top: 20),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          SizedBox(
+                            width: 150,
+                            height: 150,
+                            child: Image(
+                              image: AssetImage('assets/images/logo2.png'),
+                            ),
                           ),
-                        ),
-                        Column(
-                          children: [
-                            Row(
+                          Padding(
+                            padding: const EdgeInsets.only(right: 16),
+                            child: Row(
                               children: [
-                                Padding(
-                                  padding: EdgeInsets.only(left: 20),
-                                  child: Text(
-                                    "Hello, ${member.gender} ${member.fullName}   |   ",
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 20,
-                                    ),
-                                  ),
+                                Text(
+                                  "Hello, ${member.gender} ${member.fullName}   |   ",
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 20),
                                 ),
-                                Icon(Icons.person_sharp)
+                                Icon(
+                                  Icons.person_sharp,
+                                )
                               ],
                             ),
-                            Padding(
-                              padding: EdgeInsets.only(left: 20, top: 10),
-                              child: SearchBar(
-                                constraints: BoxConstraints(
-                                  maxWidth: 200,
-                                  maxHeight: 30,
-                                ),
-                                hintText: "Search...",
-                              ),
-                            )
-                          ],
-                        ),
-                      ],
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
-            CurrencyCards(),
-            Chart(currenciesList: currenciesList),
-            BottomNavigation()
-          ],
+              CurrencyCards(),
+              Chart(currenciesList: currenciesList),
+            ],
+          ),
         ),
+        bottomNavigationBar: BottomNavigation(),
       ),
     );
   }
