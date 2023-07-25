@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
 class SegmentedControlScreen extends StatefulWidget {
-  SegmentedControlScreen();
+  const SegmentedControlScreen({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _SegmentedControlScreenState createState() => _SegmentedControlScreenState();
 }
 
@@ -14,14 +15,14 @@ class _SegmentedControlScreenState extends State<SegmentedControlScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Segmented Control'),
+        title: const Text('Segmented Control'),
       ),
       body: Container(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
             SegmentedControl(
-              children: {
+              children: const {
                 0: Text('Flutter Development Team'),
                 1: Text('Android Development Team'),
                 2: Text('iOS Development Team'),
@@ -33,10 +34,14 @@ class _SegmentedControlScreenState extends State<SegmentedControlScreen> {
               },
               groupValue: _selectedIndex,
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             AnimatedContainer(
-              duration: Duration(milliseconds: 200),
-              height: _selectedIndex == 0 ? 200 : 100,
+              duration: const Duration(milliseconds: 200),
+              height: _selectedIndex == 0
+                  ? 200
+                  : _selectedIndex == 1
+                      ? 100
+                      : 50,
               color: _selectedIndex == 0 ? Colors.green : Colors.blue,
               alignment: Alignment.center,
               child: Text(
@@ -45,7 +50,7 @@ class _SegmentedControlScreenState extends State<SegmentedControlScreen> {
                     : _selectedIndex == 1
                         ? 'Android Development Team'
                         : 'iOS Development Team',
-                style: TextStyle(fontSize: 24, color: Colors.white),
+                style: const TextStyle(fontSize: 24, color: Colors.white),
               ),
             ),
           ],
@@ -60,7 +65,8 @@ class SegmentedControl extends StatelessWidget {
   final ValueChanged<int> onValueChanged;
   final int groupValue;
 
-  SegmentedControl({
+  const SegmentedControl({
+    super.key,
     required this.children,
     required this.onValueChanged,
     required this.groupValue,
