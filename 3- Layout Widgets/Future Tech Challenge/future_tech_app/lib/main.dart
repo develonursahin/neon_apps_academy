@@ -12,7 +12,7 @@ void main() {
       buttonTheme: ButtonThemeData(buttonColor: Colors.cyanAccent[700]),
       primaryColor: Colors.cyanAccent[700],
       secondaryHeaderColor: Colors.cyanAccent[700],
-      colorScheme: ColorScheme.dark().copyWith(
+      colorScheme: const ColorScheme.dark().copyWith(
         background: Colors.black,
       ),
     ),
@@ -132,20 +132,21 @@ class _FutureTechAppState extends State<FutureTechApp> {
     return MaterialApp(
       home: Scaffold(
         body: Container(
-          height: MediaQuery.of(context).size.height,
           color: Colors.black,
+          height: MediaQuery.of(context).size.height,
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Logo(),
-                SizedBox(height: 50),
+                const Logo(),
+                const SizedBox(height: 50),
                 DeviceStatus(
-                    connectedDevices: connectedDevices,
-                    addedRooms: addedRooms,
-                    onlineDevices: onlineDevices,
-                    offlineDevices: offlineDevices),
-                SizedBox(height: 30),
+                  connectedDevices: connectedDevices,
+                  addedRooms: addedRooms,
+                  onlineDevices: onlineDevices,
+                  offlineDevices: offlineDevices,
+                ),
+                const SizedBox(height: 30),
                 CarouselSlider.builder(
                   itemCount: rooms.length + 1,
                   itemBuilder:
@@ -162,10 +163,10 @@ class _FutureTechAppState extends State<FutureTechApp> {
                               style: BorderStyle.solid,
                               width: 3,
                             ),
-                            borderRadius: BorderRadius.all(
+                            borderRadius: const BorderRadius.all(
                               Radius.circular(20),
                             ),
-                            gradient: LinearGradient(
+                            gradient: const LinearGradient(
                               begin: Alignment.bottomCenter,
                               end: Alignment.topCenter,
                               colors: [
@@ -175,8 +176,8 @@ class _FutureTechAppState extends State<FutureTechApp> {
                               ],
                             ),
                           ),
-                          margin: EdgeInsets.all(20),
-                          child: Center(
+                          margin: const EdgeInsets.all(20),
+                          child: const Center(
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
@@ -199,136 +200,138 @@ class _FutureTechAppState extends State<FutureTechApp> {
                       );
                     }
                     Room room = rooms[index];
-                    return Container(
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                          color: Colors.cyanAccent,
-                          style: BorderStyle.solid,
-                          width: 3,
-                        ),
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(20),
-                        ),
-                        gradient: LinearGradient(
-                          begin: Alignment.bottomCenter,
-                          end: Alignment.topCenter,
-                          colors: [
-                            Colors.black,
-                            Colors.black12,
-                            Colors.cyanAccent,
-                          ],
-                        ),
-                      ),
-                      margin: EdgeInsets.all(20),
-                      child: Column(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(20.0),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                  room.roomName!,
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 22,
-                                    fontWeight: FontWeight.bold,
-                                    shadows: [
-                                      Shadow(
-                                        color: Colors.black,
-                                        blurRadius: 10,
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                InkWell(
-                                  onTap: () {
-                                    _showDeleteRoomDialog(room);
-                                  },
-                                  child: CustomDeleteButton(),
-                                ),
+                    return LayoutBuilder(
+                      builder:
+                          (BuildContext context, BoxConstraints constraints) {
+                        return Container(
+                          width: constraints.maxWidth *
+                              0.9, // Adjust the width as needed
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.cyanAccent,
+                              style: BorderStyle.solid,
+                              width: 3,
+                            ),
+                            borderRadius: const BorderRadius.all(
+                              Radius.circular(20),
+                            ),
+                            gradient: const LinearGradient(
+                              begin: Alignment.bottomCenter,
+                              end: Alignment.topCenter,
+                              colors: [
+                                Colors.black,
+                                Colors.black12,
+                                Colors.cyanAccent,
                               ],
                             ),
                           ),
-                          LayoutBuilder(
-                            builder: (BuildContext context,
-                                BoxConstraints constraints) {
-                              return Container(
-                                child: GridView.builder(
-                                  shrinkWrap: true,
-                                  physics: NeverScrollableScrollPhysics(),
-                                  itemCount: room.devices!.length + 1,
-                                  gridDelegate:
-                                      SliverGridDelegateWithFixedCrossAxisCount(
-                                    crossAxisCount: 4,
-                                  ),
-                                  itemBuilder:
-                                      (BuildContext context, int deviceIndex) {
-                                    if (deviceIndex == room.devices!.length) {
-                                      return InkWell(
-                                        onTap: () {
-                                          _showAddDeviceDialog(room);
-                                        },
-                                        child: Column(
-                                          children: [
-                                            Container(
-                                              margin: EdgeInsets.all(10),
-                                              padding: EdgeInsets.all(10),
-                                              decoration: BoxDecoration(
-                                                color: Colors.grey[200],
-                                                borderRadius:
-                                                    BorderRadius.circular(10),
-                                              ),
-                                              child: Icon(
-                                                Icons.add,
-                                                color: Colors.grey,
-                                              ),
-                                            ),
-                                            Text(
-                                              "Add Device",
-                                              style:
-                                                  TextStyle(color: Colors.grey),
-                                            ),
-                                          ],
-                                        ),
-                                      );
-                                    }
-                                    Device device = room.devices![deviceIndex];
-
+                          margin: const EdgeInsets.all(20),
+                          child: Column(
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.all(20.0),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      room.roomName!,
+                                      style: const TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 22,
+                                        fontWeight: FontWeight.bold,
+                                        shadows: [
+                                          Shadow(
+                                            color: Colors.black,
+                                            blurRadius: 10,
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    InkWell(
+                                      onTap: () {
+                                        _showDeleteRoomDialog(room);
+                                      },
+                                      child: const CustomDeleteButton(),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              GridView.builder(
+                                shrinkWrap: true,
+                                physics: const NeverScrollableScrollPhysics(),
+                                itemCount: room.devices!.length + 1,
+                                gridDelegate:
+                                    SliverGridDelegateWithFixedCrossAxisCount(
+                                  crossAxisCount: constraints.maxWidth ~/
+                                      150, // Adjust the size as needed
+                                ),
+                                itemBuilder:
+                                    (BuildContext context, int deviceIndex) {
+                                  if (deviceIndex == room.devices!.length) {
                                     return InkWell(
                                       onTap: () {
-                                        setState(() {
-                                          device.deviceStatus =
-                                              !device.deviceStatus!;
-                                        });
-                                      },
-                                      onLongPress: () {
-                                        _showDeleteDeviceDialog(room, device);
+                                        _showAddDeviceDialog(room);
                                       },
                                       child: Column(
                                         children: [
-                                          DeviceButtons(device: device),
-                                          SizedBox(height: 5),
-                                          Text(
-                                            device.deviceName!,
-                                            style: TextStyle(
-                                              fontSize: 12,
-                                              fontWeight: FontWeight.bold,
-                                              color: device.deviceStatus!
-                                                  ? Colors.cyanAccent[700]
-                                                  : Colors.grey,
+                                          Container(
+                                            margin: const EdgeInsets.all(10),
+                                            padding: const EdgeInsets.all(10),
+                                            decoration: BoxDecoration(
+                                              color: Colors.grey[200],
+                                              borderRadius:
+                                                  BorderRadius.circular(10),
                                             ),
+                                            child: const Icon(
+                                              Icons.add,
+                                              color: Colors.grey,
+                                            ),
+                                          ),
+                                          const Text(
+                                            "Add Device",
+                                            style:
+                                                TextStyle(color: Colors.grey),
                                           ),
                                         ],
                                       ),
                                     );
-                                  },
-                                ),
-                              );
-                            },
+                                  }
+                                  Device device = room.devices![deviceIndex];
+
+                                  return InkWell(
+                                    onTap: () {
+                                      setState(() {
+                                        device.deviceStatus =
+                                            !device.deviceStatus!;
+                                      });
+                                    },
+                                    onLongPress: () {
+                                      _showDeleteDeviceDialog(room, device);
+                                    },
+                                    child: Column(
+                                      children: [
+                                        DeviceButtons(device: device),
+                                        const SizedBox(height: 5),
+                                        Text(
+                                          device.deviceName!,
+                                          style: TextStyle(
+                                            fontSize: 12,
+                                            fontWeight: FontWeight.bold,
+                                            color: device.deviceStatus!
+                                                ? Colors.cyanAccent[700]
+                                                : Colors.grey,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  );
+                                },
+                              ),
+                            ],
                           ),
-                        ],
-                      ),
+                        );
+                      },
                     );
                   },
                   options: CarouselOptions(
@@ -353,7 +356,7 @@ class _FutureTechAppState extends State<FutureTechApp> {
       builder: (BuildContext context) {
         String newRoomName = '';
         return AlertDialog(
-          title: Text('Add Room'),
+          title: const Text('Add Room'),
           content: TextField(
             onChanged: (value) {
               newRoomName = value;
@@ -367,7 +370,7 @@ class _FutureTechAppState extends State<FutureTechApp> {
                 });
                 Navigator.of(context).pop();
               },
-              child: Text('Add'),
+              child: const Text('Add'),
             ),
           ],
         );
@@ -384,7 +387,7 @@ class _FutureTechAppState extends State<FutureTechApp> {
         return StatefulBuilder(
           builder: (context, setState) {
             return AlertDialog(
-              title: Text('Add Device'),
+              title: const Text('Add Device'),
               content: SingleChildScrollView(
                 child: Column(
                   children: defaultDevices.map((deviceName) {
@@ -405,7 +408,7 @@ class _FutureTechAppState extends State<FutureTechApp> {
                             getDeviceIcon(deviceName),
                             color: Colors.cyanAccent[700],
                           ),
-                          SizedBox(width: 10),
+                          const SizedBox(width: 10),
                           Text(deviceName),
                         ],
                       ),
@@ -427,7 +430,7 @@ class _FutureTechAppState extends State<FutureTechApp> {
                     });
                     Navigator.of(context).pop();
                   },
-                  child: Text('Add'),
+                  child: const Text('Add'),
                 ),
               ],
             );
@@ -444,8 +447,8 @@ class _FutureTechAppState extends State<FutureTechApp> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('Delete Room'),
-          content: Text('Are you sure you want to delete this room?'),
+          title: const Text('Delete Room'),
+          content: const Text('Are you sure you want to delete this room?'),
           actions: [
             ElevatedButton(
               onPressed: () {
@@ -454,7 +457,7 @@ class _FutureTechAppState extends State<FutureTechApp> {
                 });
                 Navigator.of(context).pop();
               },
-              child: Text('Delete'),
+              child: const Text('Delete'),
             ),
           ],
         );
@@ -467,8 +470,8 @@ class _FutureTechAppState extends State<FutureTechApp> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('Delete Device'),
-          content: Text('Are you sure you want to delete this device?'),
+          title: const Text('Delete Device'),
+          content: const Text('Are you sure you want to delete this device?'),
           actions: [
             ElevatedButton(
               onPressed: () {
@@ -477,7 +480,7 @@ class _FutureTechAppState extends State<FutureTechApp> {
                 });
                 Navigator.of(context).pop();
               },
-              child: Text('Delete'),
+              child: const Text('Delete'),
             ),
           ],
         );

@@ -10,13 +10,13 @@ class CustomDeleteButton extends StatelessWidget {
     return Column(
       children: [
         Container(
-          margin: EdgeInsets.all(5),
-          padding: EdgeInsets.all(5),
+          margin: const EdgeInsets.all(5),
+          padding: const EdgeInsets.all(5),
           decoration: BoxDecoration(
             color: Colors.grey[200],
             borderRadius: BorderRadius.circular(10),
           ),
-          child: Icon(
+          child: const Icon(
             Icons.delete,
             color: Colors.red,
           ),

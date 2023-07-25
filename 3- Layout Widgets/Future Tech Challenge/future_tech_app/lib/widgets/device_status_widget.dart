@@ -19,7 +19,7 @@ class DeviceStatus extends StatelessWidget {
     return Container(
       alignment: Alignment.topCenter,
       height: 100,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         boxShadow: [
           BoxShadow(
             color: Colors.cyanAccent,
@@ -33,7 +33,7 @@ class DeviceStatus extends StatelessWidget {
         padding: const EdgeInsets.all(12.0),
         child: Column(
           children: [
-            Text(
+            const Text(
               "Device Status",
               style: TextStyle(
                 color: Colors.white,
@@ -52,13 +52,13 @@ class DeviceStatus extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    Icon(Icons.devices_other),
+                    const Icon(Icons.devices_other),
                     Text("Connected Devices: $connectedDevices"),
                   ],
                 ),
                 Row(
                   children: [
-                    Icon(Icons.meeting_room),
+                    const Icon(Icons.meeting_room),
                     Text("Added Rooms: $addedRooms"),
                   ],
                 ),
@@ -69,13 +69,13 @@ class DeviceStatus extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    Icon(Icons.link),
+                    const Icon(Icons.link),
                     Text("Online Devices: $onlineDevices"),
                   ],
                 ),
                 Row(
                   children: [
-                    Icon(Icons.link_off),
+                    const Icon(Icons.link_off),
                     Text("Offline Devices: $offlineDevices"),
                   ],
                 ),

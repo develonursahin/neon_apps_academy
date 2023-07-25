@@ -12,8 +12,8 @@ class DeviceButtons extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(10),
-      padding: EdgeInsets.all(10),
+      margin: const EdgeInsets.all(10),
+      padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
         color: device.deviceStatus! ? Colors.cyanAccent.shade700 : Colors.white,
         borderRadius: BorderRadius.circular(10),
@@ -25,7 +25,7 @@ class DeviceButtons extends StatelessWidget {
             blurStyle: BlurStyle.normal,
             spreadRadius: 1,
             blurRadius: 15,
-            offset: Offset(0, 3),
+            offset: const Offset(0, 3),
           ),
         ],
       ),

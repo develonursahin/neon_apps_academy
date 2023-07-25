@@ -10,7 +10,6 @@ class Logo extends StatelessWidget {
     return Container(
       width: 400,
       height: 150,
-      child: Image.asset("assets/images/logo.png"),
       decoration: BoxDecoration(
         boxShadow: [
           BoxShadow(
@@ -19,8 +18,9 @@ class Logo extends StatelessWidget {
             blurRadius: 30,
           ),
         ],
-        borderRadius: BorderRadius.vertical(bottom: Radius.circular(50)),
+        borderRadius: const BorderRadius.vertical(bottom: Radius.circular(50)),
       ),
+      child: Image.asset("assets/images/logo.png"),
     );
   }
 }
