@@ -3,9 +3,11 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 class CircularProgressIndicatorScreen extends StatefulWidget {
+  // ignore: use_key_in_widget_constructors
   const CircularProgressIndicatorScreen({Key? key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _CircularProgressIndicatorScreenState createState() =>
       _CircularProgressIndicatorScreenState();
 }
@@ -38,27 +40,29 @@ class _CircularProgressIndicatorScreenState
       appBar: AppBar(
         title: const Text('Circular Progress Indicator'),
       ),
-      body: Container(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            ElevatedButton(
-              onPressed: _isLoading ? null : _startLoading,
-              child: const Text('Start Loading'),
-            ),
-            const SizedBox(height: 16),
-            if (_isLoading)
-              Column(
-                children: [
-                  CircularProgressIndicator(
-                    value: _progress / 100,
-                  ),
-                  const SizedBox(height: 16),
-                  Text('Progress: $_progress%'),
-                ],
+      body: Center(
+        child: Container(
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ElevatedButton(
+                onPressed: _isLoading ? null : _startLoading,
+                child: const Text('Start Loading'),
               ),
-          ],
+              const SizedBox(height: 16),
+              if (_isLoading)
+                Column(
+                  children: [
+                    CircularProgressIndicator(
+                      value: _progress / 100,
+                    ),
+                    const SizedBox(height: 16),
+                    Text('Progress: $_progress%'),
+                  ],
+                ),
+            ],
+          ),
         ),
       ),
     );
