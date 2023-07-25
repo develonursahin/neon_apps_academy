@@ -1,26 +1,49 @@
 import 'package:flutter/material.dart';
 
 class TabBarScreen extends StatefulWidget {
-  TabBarScreen({Key? key});
+  const TabBarScreen({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _TabBarScreenState createState() => _TabBarScreenState();
 }
 
 class _TabBarScreenState extends State<TabBarScreen>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
+  Color _appBarColor = Colors.blue;
 
   @override
   void initState() {
     super.initState();
     _tabController = TabController(length: 4, vsync: this);
+    _tabController.addListener(_handleTabChange);
   }
 
   @override
   void dispose() {
+    _tabController.removeListener(_handleTabChange);
     _tabController.dispose();
     super.dispose();
+  }
+
+  void _handleTabChange() {
+    setState(() {
+      switch (_tabController.index) {
+        case 0:
+          _appBarColor = Colors.blue;
+          break;
+        case 1:
+          _appBarColor = Colors.green;
+          break;
+        case 2:
+          _appBarColor = Colors.red;
+          break;
+        case 3:
+          _appBarColor = Colors.purple;
+          break;
+      }
+    });
   }
 
   @override
@@ -28,9 +51,10 @@ class _TabBarScreenState extends State<TabBarScreen>
     return Scaffold(
       appBar: AppBar(
         title: const Text('Hulk\'s Tabbar Challenge'),
+        backgroundColor: _appBarColor,
         bottom: TabBar(
           controller: _tabController,
-          tabs: [
+          tabs: const [
             Tab(
               icon: Icon(Icons.first_page),
               text: 'Tab 1',
@@ -52,7 +76,7 @@ class _TabBarScreenState extends State<TabBarScreen>
       ),
       body: TabBarView(
         controller: _tabController,
-        children: [
+        children: const [
           Center(
             child: Text(
               'Tab 1',
