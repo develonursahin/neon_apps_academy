@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "814141602111",
+    "project_id": "neonacademy-1",
+    "storage_bucket": "neonacademy-1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:814141602111:android:fb0be988a922d30323bb8a",
+        "android_client_info": {
+          "package_name": "com.example.firebase_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "814141602111-3u8r51n5vc2genbemq59mhj8kjk694dk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1gKzvZwTklan53_1T4hFUn21lsV7bAlY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "814141602111-0ulnkoct5pic17jij4ogups7k23j1ur4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
