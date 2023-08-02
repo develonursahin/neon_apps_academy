@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class EmptyScreen extends StatelessWidget {
-  EmptyScreen({super.key});
+  const EmptyScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +11,7 @@ class EmptyScreen extends StatelessWidget {
       ),
       body: Container(
         margin: const EdgeInsets.all(100),
-        child: Column(
+        child: const Column(
           children: [],
         ),
       ),

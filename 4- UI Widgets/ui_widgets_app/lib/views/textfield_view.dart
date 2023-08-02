@@ -46,7 +46,7 @@ class _TextFieldScreenState extends State<TextFieldScreen> {
         child: Column(
           children: [
             TextField(
-              style: TextStyle(
+              style: const TextStyle(
                 color: Colors.red,
                 fontWeight: FontWeight.bold,
               ),

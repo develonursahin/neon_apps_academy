@@ -1,7 +1,8 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class AlertControllerScreen extends StatelessWidget {
-  const AlertControllerScreen({Key? key});
+  const AlertControllerScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,9 +21,9 @@ class AlertControllerScreen extends StatelessWidget {
                 showDialog(
                   context: context,
                   builder: (BuildContext context) {
-                    return AlertDialog(
-                      title: const Text('No Buttons Alert'),
-                      content: const Text('This alert has no buttons.'),
+                    return const AlertDialog(
+                      title: Text('No Buttons Alert'),
+                      content: Text('This alert has no buttons.'),
                     );
                   },
                 );
@@ -41,7 +42,9 @@ class AlertControllerScreen extends StatelessWidget {
                       actions: [
                         TextButton(
                           onPressed: () {
-                            print('Button 1 clicked');
+                            if (kDebugMode) {
+                              print('Button 1 clicked');
+                            }
                           },
                           child: const Text('Button 1'),
                         ),
@@ -64,13 +67,17 @@ class AlertControllerScreen extends StatelessWidget {
                       actions: [
                         TextButton(
                           onPressed: () {
-                            print('Button 1 clicked');
+                            if (kDebugMode) {
+                              print('Button 1 clicked');
+                            }
                           },
                           child: const Text('Button 1'),
                         ),
                         TextButton(
                           onPressed: () {
-                            print('Button 2 clicked');
+                            if (kDebugMode) {
+                              print('Button 2 clicked');
+                            }
                           },
                           child: const Text('Button 2'),
                         ),
@@ -100,7 +107,10 @@ class AlertControllerScreen extends StatelessWidget {
                       actions: [
                         TextButton(
                           onPressed: () {
-                            print('Entered text: ${textFieldController.text}');
+                            if (kDebugMode) {
+                              print(
+                                  'Entered text: ${textFieldController.text}');
+                            }
                           },
                           child: const Text('Print Text'),
                         ),
@@ -116,25 +126,27 @@ class AlertControllerScreen extends StatelessWidget {
               onPressed: () {
                 showMenu(
                   context: context,
-                  position: RelativeRect.fromLTRB(100, 100, 0, 0),
+                  position: const RelativeRect.fromLTRB(100, 100, 0, 0),
                   items: [
-                    PopupMenuItem(
-                      child: const Text('Option 1'),
+                    const PopupMenuItem(
                       value: 'Option 1',
+                      child: Text('Option 1'),
                     ),
-                    PopupMenuItem(
-                      child: const Text('Option 2'),
+                    const PopupMenuItem(
                       value: 'Option 2',
+                      child: Text('Option 2'),
                     ),
-                    PopupMenuItem(
-                      child: const Text('Option 3'),
+                    const PopupMenuItem(
                       value: 'Option 3',
+                      child: Text('Option 3'),
                     ),
                   ],
                   elevation: 8,
                 ).then((value) {
                   if (value != null) {
-                    print('Selected option: $value');
+                    if (kDebugMode) {
+                      print('Selected option: $value');
+                    }
                   }
                 });
               },
@@ -146,7 +158,7 @@ class AlertControllerScreen extends StatelessWidget {
                 showModalBottomSheet(
                   context: context,
                   builder: (BuildContext context) {
-                    return Container(
+                    return SizedBox(
                       height: 200,
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -155,14 +167,18 @@ class AlertControllerScreen extends StatelessWidget {
                           const SizedBox(height: 16),
                           ElevatedButton(
                             onPressed: () {
-                              print('Share File selected');
+                              if (kDebugMode) {
+                                print('Share File selected');
+                              }
                               Navigator.pop(context);
                             },
                             child: const Text('Share File'),
                           ),
                           ElevatedButton(
                             onPressed: () {
-                              print('Share Image selected');
+                              if (kDebugMode) {
+                                print('Share Image selected');
+                              }
                               Navigator.pop(context);
                             },
                             child: const Text('Share Image'),

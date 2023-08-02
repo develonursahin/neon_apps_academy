@@ -94,7 +94,7 @@ class DataTableScreen extends StatelessWidget {
 class PassengerDetailsScreen extends StatelessWidget {
   final Passenger passenger;
 
-  PassengerDetailsScreen({required this.passenger});
+  const PassengerDetailsScreen({super.key, required this.passenger});
 
   @override
   Widget build(BuildContext context) {

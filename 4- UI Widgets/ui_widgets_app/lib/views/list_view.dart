@@ -12,7 +12,7 @@ class Article {
 }
 
 class ListViewScreen extends StatelessWidget {
-  ListViewScreen({Key? key});
+  ListViewScreen({super.key});
 
   final List<Article> articles = [
     Article(

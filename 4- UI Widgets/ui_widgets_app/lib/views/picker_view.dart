@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
 class PickerScreen extends StatefulWidget {
-  PickerScreen({Key? key});
+  const PickerScreen({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _PickerScreenState createState() => _PickerScreenState();
 }
 
@@ -65,7 +66,7 @@ class _PickerScreenState extends State<PickerScreen> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('Select Font'),
+          title: const Text('Select Font'),
           content: SingleChildScrollView(
             child: ListBody(
               children: fontList.map((font) {
@@ -74,7 +75,7 @@ class _PickerScreenState extends State<PickerScreen> {
                     Navigator.of(context).pop(font);
                   },
                   child: Padding(
-                    padding: EdgeInsets.symmetric(vertical: 8.0),
+                    padding: const EdgeInsets.symmetric(vertical: 8.0),
                     child: Text(
                       font,
                       style: TextStyle(fontFamily: font),
@@ -99,7 +100,7 @@ class _PickerScreenState extends State<PickerScreen> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('Select Color'),
+          title: const Text('Select Color'),
           content: SingleChildScrollView(
             child: ListBody(
               children: colorList.map((color) {
@@ -108,7 +109,7 @@ class _PickerScreenState extends State<PickerScreen> {
                     Navigator.of(context).pop(color);
                   },
                   child: Padding(
-                    padding: EdgeInsets.symmetric(vertical: 8.0),
+                    padding: const EdgeInsets.symmetric(vertical: 8.0),
                     child: Container(
                       height: 40,
                       color: color,
@@ -156,7 +157,7 @@ class _PickerScreenState extends State<PickerScreen> {
                 radius: 64,
                 backgroundImage: imagePath.isNotEmpty
                     ? FileImage(File(imagePath))
-                    : NetworkImage(
+                    : const NetworkImage(
                         'https://avatars.githubusercontent.com/u/57417618?v=4',
                       ) as ImageProvider,
               ),
@@ -179,7 +180,7 @@ class _PickerScreenState extends State<PickerScreen> {
               const SizedBox(height: 32),
               ElevatedButton(
                 onPressed: () => selectImage(),
-                child: Text('Select Photo'),
+                child: const Text('Select Photo'),
               ),
               const SizedBox(height: 16),
               ElevatedButton(
@@ -187,7 +188,7 @@ class _PickerScreenState extends State<PickerScreen> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => FontPickerScreen(),
+                      builder: (context) => const FontPickerScreen(),
                     ),
                   ).then((selectedFont) {
                     if (selectedFont != null) {
@@ -197,17 +198,17 @@ class _PickerScreenState extends State<PickerScreen> {
                     }
                   });
                 },
-                child: Text('Change Font'),
+                child: const Text('Change Font'),
               ),
               const SizedBox(height: 16),
               ElevatedButton(
                 onPressed: () => selectDate(),
-                child: Text('Select Date'),
+                child: const Text('Select Date'),
               ),
               const SizedBox(height: 16),
               ElevatedButton(
                 onPressed: () => selectColor(context),
-                child: Text('Change Background Color'),
+                child: const Text('Change Background Color'),
               ),
             ],
           ),
@@ -219,6 +220,8 @@ class _PickerScreenState extends State<PickerScreen> {
 }
 
 class FontPickerScreen extends StatelessWidget {
+  const FontPickerScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -231,31 +234,31 @@ class FontPickerScreen extends StatelessWidget {
           child: ListView(
             children: <Widget>[
               ListTile(
-                title: Text('Roboto'),
+                title: const Text('Roboto'),
                 onTap: () {
                   Navigator.of(context).pop('Roboto');
                 },
               ),
               ListTile(
-                title: Text('Open Sans'),
+                title: const Text('Open Sans'),
                 onTap: () {
                   Navigator.of(context).pop('Open Sans');
                 },
               ),
               ListTile(
-                title: Text('Lato'),
+                title: const Text('Lato'),
                 onTap: () {
                   Navigator.of(context).pop('Lato');
                 },
               ),
               ListTile(
-                title: Text('Montserrat'),
+                title: const Text('Montserrat'),
                 onTap: () {
                   Navigator.of(context).pop('Montserrat');
                 },
               ),
               ListTile(
-                title: Text('Nunito'),
+                title: const Text('Nunito'),
                 onTap: () {
                   Navigator.of(context).pop('Nunito');
                 },
@@ -271,7 +274,7 @@ class FontPickerScreen extends StatelessWidget {
 class ColorPickerScreen extends StatelessWidget {
   final Color backgroundColor;
 
-  ColorPickerScreen({required this.backgroundColor});
+  const ColorPickerScreen({super.key, required this.backgroundColor});
 
   @override
   Widget build(BuildContext context) {
@@ -282,7 +285,7 @@ class ColorPickerScreen extends StatelessWidget {
       body: Container(
         color: backgroundColor,
         margin: const EdgeInsets.all(16),
-        child: Center(
+        child: const Center(
           child: Text(
             'Change Background Color',
             style: TextStyle(
@@ -297,10 +300,12 @@ class ColorPickerScreen extends StatelessWidget {
 }
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -308,7 +313,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: PickerScreen(),
+      home: const PickerScreen(),
     );
   }
 }

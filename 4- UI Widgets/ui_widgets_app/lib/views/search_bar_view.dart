@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 
 class SearchBarScreen extends StatefulWidget {
-  SearchBarScreen({Key? key});
+  const SearchBarScreen({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _SearchBarScreenState createState() => _SearchBarScreenState();
 }
 
 class _SearchBarScreenState extends State<SearchBarScreen> {
-  List<Person> _people = [
+  final List<Person> _people = [
     Person(name: 'Mini', surname: 'Mouse', team: 'Flutter Team'),
     Person(name: 'Mickey', surname: 'Mouse', team: 'Flutter Team'),
     Person(name: 'Donald', surname: 'Duck', team: 'iOS Team'),
@@ -17,7 +18,7 @@ class _SearchBarScreenState extends State<SearchBarScreen> {
   ];
   List<Person> _filteredPeople = [];
 
-  TextEditingController _searchController = TextEditingController();
+  final TextEditingController _searchController = TextEditingController();
   String _searchCategory = 'Name';
 
   @override
@@ -50,7 +51,7 @@ class _SearchBarScreenState extends State<SearchBarScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Search Bar Challenge'),
+        title: const Text('Search Bar Challenge'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -59,16 +60,16 @@ class _SearchBarScreenState extends State<SearchBarScreen> {
             TextField(
               controller: _searchController,
               onChanged: (value) => _filterPeople(),
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: 'Search',
               ),
             ),
-            SizedBox(height: 16.0),
+            const SizedBox(height: 16.0),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text('Search by:'),
-                SizedBox(width: 8.0),
+                const Text('Search by:'),
+                const SizedBox(width: 8.0),
                 DropdownButton<String>(
                   value: _searchCategory,
                   onChanged: _onSearchCategoryChanged,
@@ -81,7 +82,7 @@ class _SearchBarScreenState extends State<SearchBarScreen> {
                 ),
               ],
             ),
-            SizedBox(height: 16.0),
+            const SizedBox(height: 16.0),
             Expanded(
               child: ListView.builder(
                 itemCount: _filteredPeople.length,

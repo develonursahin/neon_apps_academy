@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
 class StepperScreen extends StatefulWidget {
-  StepperScreen({Key? key}) : super(key: key);
+  const StepperScreen({Key? key}) : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _StepperScreenState createState() => _StepperScreenState();
 }
 
@@ -23,16 +24,16 @@ class _StepperScreenState extends State<StepperScreen> {
           children: [
             Text(
               'Current Value: $currentValue',
-              style: TextStyle(fontSize: 20),
+              style: const TextStyle(fontSize: 20),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Expanded(
               child: ListView.builder(
-                physics: BouncingScrollPhysics(),
+                physics: const BouncingScrollPhysics(),
                 itemCount: 11,
                 itemBuilder: (context, index) {
                   return Container(
-                    margin: EdgeInsets.only(bottom: 16),
+                    margin: const EdgeInsets.only(bottom: 16),
                     child: Card(
                       child: ListTile(
                         title: Text('Outfit ${index + 1}'),
@@ -44,7 +45,7 @@ class _StepperScreenState extends State<StepperScreen> {
                           height: 50,
                           color: Colors
                               .primaries[(index + 1) % Colors.primaries.length],
-                          child: Icon(Icons.checkroom_outlined),
+                          child: const Icon(Icons.checkroom_outlined),
                         ),
                       ),
                     ),
@@ -61,16 +62,16 @@ class _StepperScreenState extends State<StepperScreen> {
                       currentValue = (currentValue - 5).clamp(0, 50);
                     });
                   },
-                  child: Text('Previous'),
+                  child: const Text('Previous'),
                 ),
-                SizedBox(width: 16),
+                const SizedBox(width: 16),
                 ElevatedButton(
                   onPressed: () {
                     setState(() {
                       currentValue = (currentValue + 5).clamp(0, 50);
                     });
                   },
-                  child: Text('Next'),
+                  child: const Text('Next'),
                 ),
               ],
             ),

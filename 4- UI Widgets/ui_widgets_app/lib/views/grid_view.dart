@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class GridViewScreen extends StatelessWidget {
-  GridViewScreen({Key? key});
+  GridViewScreen({super.key});
 
   final List<App> apps = [
     App(
@@ -32,7 +32,7 @@ class GridViewScreen extends StatelessWidget {
       ),
       body: GridView.builder(
         itemCount: apps.length,
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
         ),
         itemBuilder: (context, index) {
@@ -89,7 +89,7 @@ class App {
 class AppDetailScreen extends StatelessWidget {
   final App app;
 
-  AppDetailScreen({required this.app});
+  const AppDetailScreen({super.key, required this.app});
 
   @override
   Widget build(BuildContext context) {
@@ -107,12 +107,12 @@ class AppDetailScreen extends StatelessWidget {
             ),
             Text('Release Date: ${app.releaseDate}'),
             Text('Category: ${app.appCategory}'),
-            SizedBox(height: 15),
+            const SizedBox(height: 15),
             ElevatedButton(
               onPressed: () {
                 // Open the app store URL
               },
-              child: Text('Open in App Store'),
+              child: const Text('Open in App Store'),
             ),
           ],
         ),

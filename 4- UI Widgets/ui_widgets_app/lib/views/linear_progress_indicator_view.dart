@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
 class LinearProgressIndicatorScreen extends StatefulWidget {
-  const LinearProgressIndicatorScreen({Key? key});
+  const LinearProgressIndicatorScreen({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _LinearProgressIndicatorScreenState createState() =>
       _LinearProgressIndicatorScreenState();
 }
@@ -42,7 +43,7 @@ class _LinearProgressIndicatorScreenState
             const SizedBox(height: 16),
             Text(
               'Progress: $_progress / 10',
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
               ),

@@ -20,10 +20,12 @@ import 'package:ui_widgets_app/views/tab_bar_view.dart';
 import 'package:ui_widgets_app/views/textfield_view.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -59,6 +61,8 @@ class ContainerGrid extends StatelessWidget {
     'List View',
   ];
 
+  ContainerGrid({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -79,45 +83,45 @@ class ContainerGrid extends StatelessWidget {
                   builder: (context) {
                     switch (pageNames[index]) {
                       case 'Container':
-                        return ContainerScreen();
+                        return const ContainerScreen();
                       case 'Buttons':
-                        return ButtonScreen();
+                        return const ButtonScreen();
                       case 'TextFields':
-                        return TextFieldScreen();
+                        return const TextFieldScreen();
                       case 'Slider':
-                        return SliderScreen();
+                        return const SliderScreen();
                       case 'Switch':
-                        return SwitchScreen();
+                        return const SwitchScreen();
                       case 'Stepper':
-                        return StepperScreen();
+                        return const StepperScreen();
                       case 'PageControl':
-                        return PageControlScreen();
+                        return const PageControlScreen();
                       case 'Segmented Control':
-                        return SegmentedControlScreen();
+                        return const SegmentedControlScreen();
                       case 'Alert Controller':
-                        return AlertControllerScreen();
+                        return const AlertControllerScreen();
                       case 'Circular Progress Indicator':
-                        return CircularProgressIndicatorScreen();
+                        return const CircularProgressIndicatorScreen();
                       case 'Linear Progress Indicator':
-                        return LinearProgressIndicatorScreen();
+                        return const LinearProgressIndicatorScreen();
                       case 'Stack':
-                        return StackScreen();
+                        return const StackScreen();
                       case 'Scroll View':
-                        return ScrollScreen();
+                        return const ScrollScreen();
                       case 'Tab Bar':
-                        return TabBarScreen();
+                        return const TabBarScreen();
                       case 'Picker':
-                        return PickerScreen();
+                        return const PickerScreen();
                       case 'Data Table':
                         return DataTableScreen();
                       case 'Search Bar':
-                        return SearchBarScreen();
+                        return const SearchBarScreen();
                       case 'Grid View':
                         return GridViewScreen();
                       case 'List View':
                         return ListViewScreen();
                       default:
-                        return ContainerScreen();
+                        return const ContainerScreen();
                     }
                   },
                 ),

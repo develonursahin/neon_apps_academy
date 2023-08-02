@@ -32,7 +32,7 @@ class _SwitchScreenState extends State<SwitchScreen> {
                   isSwitched = value;
                 });
               },
-              thumbColor: MaterialStatePropertyAll(Colors.black),
+              thumbColor: const MaterialStatePropertyAll(Colors.black),
               activeColor: switchColor,
               trackColor: MaterialStatePropertyAll(switchColor),
             ),
