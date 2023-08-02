@@ -1,6 +1,6 @@
 # Neon Apps - Flutter Developer Intern
 
-![Neon Apps Logo](https://static.wixstatic.com/media/34e382_7ffb36ee326543cf8770dea45507e3e9~mv2.png)
+![Neon Apps](https://static.wixstatic.com/media/34e382_7ffb36ee326543cf8770dea45507e3e9~mv2.png)
 
 > [Neon Apps](https://www.neonapps.co) is a mobile application development company, and this repository showcases my journey as a Flutter Developer Intern during the Neon Academy program. In this repository, you will find my completed tasks and projects related to the topics covered during the academy.
 
@@ -125,4 +125,4 @@ Description: This section showcases tasks and projects involving screen animatio
 If you have any questions or would like to connect, you can reach me via:
 
 - Email: develonur@gmail.com
-- LinkedIn: [Your LinkedIn Profile](https://www.linkedin.com/in/derinonursahin/)
+- LinkedIn: [derinonursahin](https://www.linkedin.com/in/derinonursahin/)
