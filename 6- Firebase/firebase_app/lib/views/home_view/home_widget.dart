@@ -201,7 +201,7 @@ class _PostCardState extends State<PostCard> {
                                         bottom: 0,
                                         right: 0,
                                         child: ClipRRect(
-                                          borderRadius: BorderRadius.all(
+                                          borderRadius: const BorderRadius.all(
                                               Radius.circular(20)),
                                           child: ColoredBox(
                                             color: statusColor,

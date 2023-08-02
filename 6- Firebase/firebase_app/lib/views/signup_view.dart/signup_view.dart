@@ -40,7 +40,7 @@ class _SignUpViewState extends State<SignUpView> {
                     child:
                         SizedBox(child: Image.asset("assets/images/logo.png")),
                   ),
-                  SizedBox(height: 16),
+                  const SizedBox(height: 16),
                   TextFormField(
                     controller: signupViewModel.nameController,
                     decoration: const InputDecoration(
@@ -54,7 +54,7 @@ class _SignUpViewState extends State<SignUpView> {
                       return null;
                     },
                   ),
-                  SizedBox(height: 16),
+                  const SizedBox(height: 16),
                   TextFormField(
                     controller: signupViewModel.surnameController,
                     decoration: const InputDecoration(
@@ -68,7 +68,7 @@ class _SignUpViewState extends State<SignUpView> {
                       return null;
                     },
                   ),
-                  SizedBox(height: 16),
+                  const SizedBox(height: 16),
                   TextFormField(
                     controller: signupViewModel.usernameController,
                     decoration: const InputDecoration(
@@ -85,7 +85,7 @@ class _SignUpViewState extends State<SignUpView> {
                       return null;
                     },
                   ),
-                  SizedBox(height: 16),
+                  const SizedBox(height: 16),
                   TextFormField(
                     controller: signupViewModel.emailController,
                     decoration: const InputDecoration(
@@ -105,7 +105,7 @@ class _SignUpViewState extends State<SignUpView> {
                       return null;
                     },
                   ),
-                  SizedBox(height: 16),
+                  const SizedBox(height: 16),
                   TextFormField(
                     controller: signupViewModel.passwordController,
                     decoration: const InputDecoration(

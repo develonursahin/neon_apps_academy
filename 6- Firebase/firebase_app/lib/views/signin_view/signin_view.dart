@@ -81,6 +81,7 @@ class _SigninViewState extends State<SigninView> {
                     if (_formKey.currentState!.validate()) {
                       var user = await viewModel.signIn();
                       if (user != null) {
+                        // ignore: use_build_context_synchronously
                         Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(

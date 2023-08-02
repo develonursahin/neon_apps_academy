@@ -19,7 +19,7 @@ class AuthService {
       if (kDebugMode) {
         print("Error signing in: $e");
       }
-      throw e;
+      rethrow;
     }
   }
 
