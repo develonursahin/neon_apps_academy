@@ -6,7 +6,7 @@ class TicketBuyButton extends StatelessWidget {
   final List<Ticket> tickets;
   final String eventName;
 
-  TicketBuyButton({
+  const TicketBuyButton({
     Key? key,
     required this.tickets,
     required this.eventName,
@@ -17,7 +17,7 @@ class TicketBuyButton extends StatelessWidget {
     return ElevatedButton(
       onPressed: () {
         showModalBottomSheet<void>(
-          constraints: BoxConstraints(minHeight: 120, maxHeight: 180),
+          constraints: const BoxConstraints(minHeight: 120, maxHeight: 180),
           barrierColor: Colors.amber,
           context: context,
           builder: (BuildContext context) {
@@ -29,7 +29,7 @@ class TicketBuyButton extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Text(eventName,
-                          style: TextStyle(
+                          style: const TextStyle(
                               fontSize: 20, fontWeight: FontWeight.bold)),
                       ListView.builder(
                         shrinkWrap: true,
@@ -41,12 +41,12 @@ class TicketBuyButton extends StatelessWidget {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Text(tickets[index].ticketName!,
-                                      style: TextStyle(
+                                      style: const TextStyle(
                                           fontSize: 18,
                                           fontWeight: FontWeight.bold)),
-                                  Spacer(flex: 1),
+                                  const Spacer(flex: 1),
                                   Text(tickets[index].ticketPrice!.toString(),
-                                      style: TextStyle(fontSize: 18)),
+                                      style: const TextStyle(fontSize: 18)),
                                 ],
                               ),
                             ],
@@ -64,18 +64,18 @@ class TicketBuyButton extends StatelessWidget {
       style: ElevatedButton.styleFrom(
         shadowColor: Colors.white,
         shape: RoundedRectangleBorder(
-          side: BorderSide(color: Colors.cyan, width: 2),
+          side: const BorderSide(color: Colors.cyan, width: 2),
           borderRadius: BorderRadius.circular(16.0),
         ),
       ),
-      child: Row(
+      child: const Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Icon(
             Icons.event_seat,
             color: Colors.green,
           ),
-          const SizedBox(width: 10.0),
+          SizedBox(width: 10.0),
           NeonTextWidget(
             fontSize: 15,
             fontWeight: FontWeight.w100,

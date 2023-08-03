@@ -25,23 +25,23 @@ class CardSlider extends StatelessWidget {
         return Container(
           decoration: BoxDecoration(
               color: Colors.purpleAccent,
-              boxShadow: [
+              boxShadow: const [
                 BoxShadow(color: Colors.purple, blurRadius: 20, spreadRadius: 2)
               ],
               border: Border.all(color: Colors.black),
               borderRadius: BorderRadius.circular(20)),
-          margin: EdgeInsets.all(10),
+          margin: const EdgeInsets.all(10),
           child: Column(
             children: [
               EventsCard(imageUrl: event.eventImageUrl!),
               Padding(
-                padding: EdgeInsets.all(8),
+                padding: const EdgeInsets.all(8),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Text(
                       event.eventName!,
-                      style: TextStyle(
+                      style: const TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                           color: Colors.white,
@@ -54,7 +54,7 @@ class CardSlider extends StatelessWidget {
                       children: [
                         Container(
                           alignment: Alignment.center,
-                          margin: EdgeInsets.all(2),
+                          margin: const EdgeInsets.all(2),
                           decoration: BoxDecoration(
                               color: Colors.white,
                               border: Border.all(color: Colors.cyanAccent),

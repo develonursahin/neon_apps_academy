@@ -3,7 +3,7 @@ import 'package:flexible_class_app/widgets/chart/chart_widget.dart';
 import 'package:flexible_class_app/widgets/currency_cards_widget.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class Member {
   String fullName;
@@ -36,7 +36,7 @@ List<Currencies> currenciesList = [
 ];
 
 class MyApp extends StatelessWidget {
-  MyApp({Key? key}) : super(key: key);
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +44,7 @@ class MyApp extends StatelessWidget {
       title: 'Fin Smart',
       theme: ThemeData(
         brightness: Brightness.dark,
-        appBarTheme: AppBarTheme(
+        appBarTheme: const AppBarTheme(
           color: Color.fromARGB(255, 0, 191, 99),
         ),
       ),
@@ -57,7 +57,7 @@ class MyApp extends StatelessWidget {
             children: [
               Container(
                 height: 170,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Color.fromARGB(255, 0, 191, 99),
                   borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(30),
@@ -67,11 +67,11 @@ class MyApp extends StatelessWidget {
                 child: Column(
                   children: [
                     Padding(
-                      padding: EdgeInsets.only(top: 20),
+                      padding: const EdgeInsets.only(top: 20),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          SizedBox(
+                          const SizedBox(
                             width: 150,
                             height: 150,
                             child: Image(
@@ -84,10 +84,10 @@ class MyApp extends StatelessWidget {
                               children: [
                                 Text(
                                   "Hello, ${member.gender} ${member.fullName}   |   ",
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                       color: Colors.white, fontSize: 20),
                                 ),
-                                Icon(
+                                const Icon(
                                   Icons.person_sharp,
                                 )
                               ],
@@ -99,12 +99,12 @@ class MyApp extends StatelessWidget {
                   ],
                 ),
               ),
-              CurrencyCards(),
+              const CurrencyCards(),
               Chart(currenciesList: currenciesList),
             ],
           ),
         ),
-        bottomNavigationBar: BottomNavigation(),
+        bottomNavigationBar: const BottomNavigation(),
       ),
     );
   }

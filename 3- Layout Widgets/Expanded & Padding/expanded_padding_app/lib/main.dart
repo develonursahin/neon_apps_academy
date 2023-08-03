@@ -4,10 +4,12 @@ import 'package:expanded_padding_app/views/route_planning_view/route_planning_vi
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(TravelEaseApp());
+  runApp(const TravelEaseApp());
 }
 
 class TravelEaseApp extends StatelessWidget {
+  const TravelEaseApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -32,21 +34,23 @@ class HomePage extends StatelessWidget {
       icon: Icons.map,
       label: 'Route Planning',
       color: Colors.orange,
-      route: RoutePlanningPage(),
+      route: const RoutePlanningPage(),
     ),
     ButtonInfo(
       icon: Icons.hotel,
       label: 'Hotel Reservation',
       color: Colors.green,
-      route: HotelReservationPage(),
+      route: const HotelReservationPage(),
     ),
   ];
+
+  HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('TravelEase'),
+        title: const Text('TravelEase'),
       ),
       body: Column(
         children: [
@@ -61,7 +65,7 @@ class HomePage extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           Expanded(
             child: ListView.builder(
               itemCount: buttons.length,
@@ -74,7 +78,7 @@ class HomePage extends StatelessWidget {
                   ),
                   title: Text(
                     buttons[index].label,
-                    style: TextStyle(fontSize: 18),
+                    style: const TextStyle(fontSize: 18),
                   ),
                   onTap: () {
                     Navigator.push(

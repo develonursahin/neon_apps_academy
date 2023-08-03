@@ -1,6 +1,7 @@
 // ignore_for_file: library_private_types_in_public_api, prefer_const_constructors
 
 import 'dart:convert';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -91,7 +92,9 @@ class _DestinationListScreenState extends State<DestinationListScreen> {
         .map((destination) => jsonEncode(destination.toJson()))
         .toList();
     await prefs.setStringList('destinations', destinationsJson);
-    print("object");
+    if (kDebugMode) {
+      print("object");
+    }
   }
 
   void addDestination() {

@@ -7,6 +7,7 @@ class NeonAcademyMember {
       memberLevel = "",
       homeTown = "";
   int age = 0, id;
+  // ignore: avoid_init_to_null
   int? motivationLevel = null;
   ContactInformation? contactInformation;
   Team? team;

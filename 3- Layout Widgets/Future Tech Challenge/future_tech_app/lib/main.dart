@@ -7,7 +7,7 @@ import 'package:future_tech_app/widgets/logo_widget.dart';
 
 void main() {
   runApp(MaterialApp(
-    home: FutureTechApp(),
+    home: const FutureTechApp(),
     theme: ThemeData(
       buttonTheme: ButtonThemeData(buttonColor: Colors.cyanAccent[700]),
       primaryColor: Colors.cyanAccent[700],
@@ -59,7 +59,10 @@ Device d2 = Device(
 Room r1 = Room(roomName: "Living Room", devices: [d1, d2]);
 
 class FutureTechApp extends StatefulWidget {
+  const FutureTechApp({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _FutureTechAppState createState() => _FutureTechAppState();
 }
 
@@ -88,9 +91,9 @@ class _FutureTechAppState extends State<FutureTechApp> {
 
   int getTotalConnectedDevices() {
     int totalDevices = 0;
-    rooms.forEach((room) {
+    for (var room in rooms) {
       totalDevices += room.devices!.length;
-    });
+    }
     return totalDevices;
   }
 
@@ -100,25 +103,25 @@ class _FutureTechAppState extends State<FutureTechApp> {
 
   int getTotalOnlineDevices() {
     int totalOnlineDevices = 0;
-    rooms.forEach((room) {
-      room.devices!.forEach((device) {
+    for (var room in rooms) {
+      for (var device in room.devices!) {
         if (device.deviceStatus!) {
           totalOnlineDevices++;
         }
-      });
-    });
+      }
+    }
     return totalOnlineDevices;
   }
 
   int getTotalOfflineDevices() {
     int totalOfflineDevices = 0;
-    rooms.forEach((room) {
-      room.devices!.forEach((device) {
+    for (var room in rooms) {
+      for (var device in room.devices!) {
         if (!device.deviceStatus!) {
           totalOfflineDevices++;
         }
-      });
-    });
+      }
+    }
     return totalOfflineDevices;
   }
 
@@ -420,13 +423,13 @@ class _FutureTechAppState extends State<FutureTechApp> {
                 ElevatedButton(
                   onPressed: () {
                     setState(() {
-                      selectedDevices.forEach((deviceName) {
+                      for (var deviceName in selectedDevices) {
                         room.devices!.add(Device(
                           deviceName: deviceName,
                           deviceStatus: false,
                           deviceIcon: getDeviceIcon(deviceName),
                         ));
-                      });
+                      }
                     });
                     Navigator.of(context).pop();
                   },

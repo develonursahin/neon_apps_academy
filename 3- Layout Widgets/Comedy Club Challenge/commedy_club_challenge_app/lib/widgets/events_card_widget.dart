@@ -10,19 +10,20 @@ class EventsCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+        borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
         child: Container(
-          margin: EdgeInsets.all(10),
+          margin: const EdgeInsets.all(10),
           height: 200,
           decoration: BoxDecoration(
-              boxShadow: [
+              boxShadow: const [
                 BoxShadow(color: Colors.cyan, blurRadius: 10, spreadRadius: 2)
               ],
               border: Border.all(
                 color: Colors.cyanAccent,
                 width: 5,
               ),
-              borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+              borderRadius:
+                  const BorderRadius.vertical(top: Radius.circular(20)),
               image: DecorationImage(
                 fit: BoxFit.cover,
                 image: NetworkImage(

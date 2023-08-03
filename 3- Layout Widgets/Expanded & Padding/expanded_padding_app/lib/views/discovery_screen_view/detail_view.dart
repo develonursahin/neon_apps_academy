@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 class DetailPage extends StatelessWidget {
   final Destination destination;
 
-  DetailPage({required this.destination});
+  const DetailPage({super.key, required this.destination});
 
   @override
   Widget build(BuildContext context) {
@@ -25,18 +25,18 @@ class DetailPage extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(16.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   destination.title,
-                  style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+                  style: const TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
                 ),
-                SizedBox(height: 8.0),
+                const SizedBox(height: 8.0),
                 Text(
                   destination.description,
-                  style: TextStyle(fontSize: 16.0),
+                  style: const TextStyle(fontSize: 16.0),
                 ),
               ],
             ),

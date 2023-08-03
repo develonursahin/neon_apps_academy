@@ -9,6 +9,7 @@ class NeonTextWidget extends StatelessWidget {
   final double letterSpacing;
 
   const NeonTextWidget({
+    super.key,
     required this.text,
     required this.keywordColors,
     required this.defaultColor,
@@ -54,7 +55,7 @@ class NeonTextWidget extends StatelessWidget {
         );
       }
       if (i < words.length - 1) {
-        coloredTextSpans.add(TextSpan(text: " "));
+        coloredTextSpans.add(const TextSpan(text: " "));
       }
     }
 

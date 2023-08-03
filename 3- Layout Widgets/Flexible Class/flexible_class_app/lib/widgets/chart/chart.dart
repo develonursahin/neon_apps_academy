@@ -13,7 +13,7 @@ class GraphicWidget extends StatelessWidget {
   final List<charts.Series<OrdinalSales, String>> seriesList;
   final bool animate;
 
-  const GraphicWidget(this.seriesList, {Key? key, required this.animate});
+  const GraphicWidget(this.seriesList, {super.key, required this.animate});
 
   factory GraphicWidget.withSampleData(List<Currencies> currenciesList) {
     return GraphicWidget(

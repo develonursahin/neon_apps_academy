@@ -3,6 +3,7 @@ import 'package:commedy_club_challenge_app/viewmodels/home_view_model.dart';
 import 'package:commedy_club_challenge_app/widgets/neon_text_widget.dart';
 import 'package:commedy_club_challenge_app/widgets/past_events_widget.dart';
 import 'package:commedy_club_challenge_app/widgets/upcoming_event_cards_widget.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -10,7 +11,7 @@ void main() {
 }
 
 class ComedyClub extends StatelessWidget {
-  const ComedyClub({Key? key});
+  const ComedyClub({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +27,7 @@ class ComedyClub extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title});
+  const MyHomePage({super.key, required this.title});
 
   final String title;
 
@@ -39,7 +40,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
 
     upComingEventsFinder();
@@ -51,7 +51,9 @@ class _MyHomePageState extends State<MyHomePage> {
     for (int i = 0; i < vM.events.length; i++) {
       DateTime now = DateTime.now();
       var after = vM.events[i].dateTime!.isAfter(now);
-      print(after);
+      if (kDebugMode) {
+        print(after);
+      }
 
       if (after) {
         setState(() {
@@ -72,7 +74,7 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: NeonTextWidget(
           text: widget.title,
-          keywordColors: {
+          keywordColors: const {
             'Comedy': Colors.cyanAccent,
             'Club': Colors.purpleAccent,
           },

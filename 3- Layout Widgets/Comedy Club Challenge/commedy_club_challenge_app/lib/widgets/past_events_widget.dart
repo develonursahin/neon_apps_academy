@@ -14,7 +14,7 @@ class PastEvents extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        NeonTextWidget(
+        const NeonTextWidget(
           fontSize: 20,
           fontWeight: FontWeight.bold,
           text: "Past Events",
@@ -24,7 +24,7 @@ class PastEvents extends StatelessWidget {
           },
           defaultColor: Colors.white,
         ),
-        SizedBox(height: 10),
+        const SizedBox(height: 10),
         SizedBox(
           height: 360,
           child: CardSlider(

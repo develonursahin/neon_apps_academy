@@ -13,7 +13,7 @@ class CurrencyCards extends StatelessWidget {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Padding(
-        padding: EdgeInsets.all(10),
+        padding: const EdgeInsets.all(10),
         child: Row(
           children: List.generate(
             currenciesList.length,
@@ -24,7 +24,7 @@ class CurrencyCards extends StatelessWidget {
               final icon =
                   isIncrease ? Icons.arrow_upward : Icons.arrow_downward;
               final iconColor =
-                  isIncrease ? Color.fromARGB(255, 0, 229, 255) : Colors.red;
+                  isIncrease ? const Color.fromARGB(255, 0, 229, 255) : Colors.red;
 
               return SizedBox(
                 height: 250,
