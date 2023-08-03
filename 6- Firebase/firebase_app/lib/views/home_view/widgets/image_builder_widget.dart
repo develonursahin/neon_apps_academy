@@ -45,7 +45,7 @@ class _ImageBuilderWidgetState extends State<ImageBuilderWidget> {
                           padding: const EdgeInsets.all(8.0),
                           child: Image.network(
                             widget.widget.post.postImageUrl![index],
-                            fit: BoxFit.cover,
+                            fit: BoxFit.contain,
                           ),
                         );
                       },

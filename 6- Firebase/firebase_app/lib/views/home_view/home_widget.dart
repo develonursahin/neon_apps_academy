@@ -10,7 +10,11 @@ import 'package:firebase_app/views/home_view/home_viewmodel.dart';
 import 'package:firebase_app/views/home_view/widgets/image_builder_widget.dart';
 import 'package:firebase_app/views/home_view/widgets/like_button_widget.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:image_gallery_saver/image_gallery_saver.dart';
+import 'package:http/http.dart' as http;
+import 'package:permission_handler/permission_handler.dart';
 
 class PostCard extends StatefulWidget {
   final PostModel post;
@@ -340,6 +344,14 @@ class _PostCardState extends State<PostCard> {
                             },
                             icon: const Icon(Icons.mode_comment_outlined),
                           ),
+                          IconButton(
+                            onPressed: () {
+                              for (var imageUrl in widget.post.postImageUrl!) {
+                                _saveImageToGallery(imageUrl);
+                              }
+                            },
+                            icon: const Icon(Icons.download_outlined),
+                          ),
                         ],
                       ),
                       Align(
@@ -363,5 +375,36 @@ class _PostCardState extends State<PostCard> {
               ],
             ),
           );
+  }
+}
+
+Future<void> _saveImageToGallery(String imageUrl) async {
+  try {
+    var status = await Permission.storage.request();
+    if (!status.isGranted) {
+      if (kDebugMode) {
+        print('Storage permission denied');
+      }
+      return;
+    }
+
+    var response = await http.get(Uri.parse(imageUrl));
+    if (response.statusCode == 200) {
+      final result = await ImageGallerySaver.saveImage(
+          Uint8List.fromList(response.bodyBytes));
+      if (result['isSuccess'] == true) {
+        if (kDebugMode) {
+          print('Image saved to gallery');
+        }
+      } else {
+        if (kDebugMode) {
+          print('Failed to save image to gallery');
+        }
+      }
+    }
+  } catch (e) {
+    if (kDebugMode) {
+      print('Error saving image: $e');
+    }
   }
 }
